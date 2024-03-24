@@ -27,6 +27,12 @@ export class RDS extends Construct {
       username: 'admin',
     });
 
+    // We are creating a MySQL RDS database instance with the MySQL engine
+    // version 8.0.28. The name of the database is 'todolist'. The database will
+    // be hosted by an EC2 instance of type T3.SMALL. We are defining ports and
+    // their accessibility within the VPC. We are using a VPC that is passed
+    // down higher on the stack and asking RDS to spin up the EC2 instance
+    // within a private subnet.
     this.instance = new rds.DatabaseInstance(scope, 'MySQL-RDS-Instance', {
       credentials: rds.Credentials.fromSecret(this.credentials),
       databaseName: 'todolist',
