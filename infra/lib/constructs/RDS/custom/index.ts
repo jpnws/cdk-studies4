@@ -45,7 +45,6 @@ export class CDKResourceInitializer extends Construct {
     );
 
     this.function = new lambda.DockerImageFunction(scope, 'Function', {
-      allowAllOutbound: true,
       code: props.function_code,
       functionName: `${id}-ResInit${stack.stackName}`,
       logRetention: props.function_log_retention,

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "bin": "bin/chapter-4.js",
   "scripts": {
-    "build:frontend": "cd ../web && yarn install && yarn build",
+    "build:frontend": "cd ../web && pnpm install && pnpm build",
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",

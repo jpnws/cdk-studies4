@@ -41,7 +41,7 @@ export class Chapter3Stack extends Stack {
         {
           cidrMask: 24,
           name: 'compute',
-          subnetType: SubnetType.PRIVATE_WITH_NAT,
+          subnetType: SubnetType.PRIVATE_WITH_EGRESS,
         },
         {
           cidrMask: 28,

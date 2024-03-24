@@ -35,7 +35,7 @@ export class RDS extends Construct {
       }),
       instanceIdentifier: instance_id,
       instanceType: ec2.InstanceType.of(
-        ec2.InstanceClass.T2,
+        ec2.InstanceClass.T3,
         ec2.InstanceSize.SMALL,
       ),
       port: 3306,
@@ -57,7 +57,7 @@ export class RDS extends Construct {
       function_security_groups: [],
       vpc: props.vpc,
       subnets_selection: props.vpc.selectSubnets({
-        subnetType: ec2.SubnetType.PRIVATE_WITH_NAT,
+        subnetType: ec2.SubnetType.PRIVATE_WITH_EGRESS,
       }),
     });
 
